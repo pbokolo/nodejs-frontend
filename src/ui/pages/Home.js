@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <Stack sx={{ marginLeft: "-0.5em", marginRight: "-0.5em" }}>
       <LandingComp />
-      <Container>
+      <Container maxWidth="lg">
         <StuffsList />
       </Container>
     </Stack>
