@@ -2,13 +2,12 @@ import React from "react";
 
 import { Grid, Paper, Typography } from "@mui/material";
 
-export default function StuffComp({ title, price, url, clickHandler }) {
+import { useNavigate } from "react-router-dom";
+
+export default function StuffComp({ id, title, price, url, clickHandler }) {
+  const navigate = useNavigate();
   const clickHand = () => {
-    if (localStorage.getItem("token") === null) {
-      clickHandler(true);
-    } else {
-      console.log(localStorage.getItem("token"));
-    }
+    navigate("/stuff", { state: { stuff: { id: `${id}` } } });
   };
 
   return (

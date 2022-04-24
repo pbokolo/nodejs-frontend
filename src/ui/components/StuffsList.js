@@ -29,6 +29,7 @@ export default function StuffsList() {
         {stuffs.map((stuff, index) => (
           <StuffComp
             key={index}
+            id={stuff._id}
             title={stuff.title}
             price={stuff.price}
             url={stuff.imageUrl}
