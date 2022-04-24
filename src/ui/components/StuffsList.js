@@ -6,22 +6,17 @@ import axios from "axios";
 
 import StuffComp from "./Stuff";
 
-import AuthDialog from "./AuthDialog";
-
 export default function StuffsList() {
+  // La liste des biens en vente
   const [stuffs, setStuffs] = useState([]);
 
-  const [authDialogOpen, setAuthDialogOpen] = useState(false);
-
+  // Recupere les biens en vente chaque fois que le composant est monte
   useEffect(() => {
     axios
       .get("http://localhost:8080/api/stuffs")
       .then((stuffsData) => setStuffs(stuffsData.data))
       .catch((error) => console.log(error));
   }, [stuffs]);
-
-  // Closes the the auth dialog
-  const authDialogCloseHandler = () => setAuthDialogOpen(false);
 
   return (
     <>
@@ -33,11 +28,9 @@ export default function StuffsList() {
             title={stuff.title}
             price={stuff.price}
             url={stuff.imageUrl}
-            clickHandler={setAuthDialogOpen}
           />
         ))}
       </Grid>
-      <AuthDialog open={authDialogOpen} closeHandler={authDialogCloseHandler} />
     </>
   );
 }

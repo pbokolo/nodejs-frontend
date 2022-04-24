@@ -4,7 +4,7 @@ import { Grid, Paper, Typography } from "@mui/material";
 
 import { useNavigate } from "react-router-dom";
 
-export default function StuffComp({ id, title, price, url, clickHandler }) {
+export default function StuffComp({ id, title, price, url }) {
   const navigate = useNavigate();
   const clickHand = () => {
     navigate("/stuff", { state: { stuff: { id: `${id}` } } });

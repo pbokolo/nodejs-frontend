@@ -10,7 +10,6 @@ import {
   TextField,
 } from "@mui/material";
 
-
 import axios from "axios";
 
 export default function AuthDialog({ open, closeHandler }) {
@@ -30,6 +29,7 @@ export default function AuthDialog({ open, closeHandler }) {
       .then((result) => {
         localStorage.setItem("token", result.data.token);
         setTxtValues({ ...txtValues, txtInitValues });
+        closeHandler();
       })
       .catch((error) => console.log(error));
   };
@@ -66,7 +66,6 @@ export default function AuthDialog({ open, closeHandler }) {
             onChange={txtChangeHandler}
           />
           <TextField
-            autoFocus
             margin="dense"
             id="password"
             label="Mot de passe"
@@ -78,9 +77,7 @@ export default function AuthDialog({ open, closeHandler }) {
           />
           <DialogActions>
             <Button onClick={closeHandler}>Annuler</Button>
-            <Button type="submit" onClick={closeHandler}>
-              Connexion
-            </Button>
+            <Button type="submit">Connexion</Button>
           </DialogActions>
         </form>
       </DialogContent>
