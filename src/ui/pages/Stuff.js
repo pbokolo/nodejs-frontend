@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import {
   Button,
@@ -16,16 +16,23 @@ import {
 
 import AuthDialog from "../components/AuthDialog";
 
+import ConfDialog from "../components/ConfDialog";
+
 import axios from "axios";
 
 export default function Stuff() {
   const location = useLocation();
+
+  const navigate = useNavigate();
 
   // Cet etat indique si le token d'authentification existe
   const isAuth = localStorage.getItem("token") !== null;
 
   // Etat de la boite de dialoge de connexion au compte utilisateur
   const [authDialogOpen, setAuthDialogOpen] = useState(false);
+
+  // Etat de la boite de dialoge de confirmation de la suppression d'un objet
+  const [delConfOpen, setDelConfOpen] = useState(false);
 
   const [stuff, setStuff] = useState(null);
 
@@ -49,6 +56,29 @@ export default function Stuff() {
 
   const authDialogCloseHandler = () => setAuthDialogOpen(false);
 
+  const delConfCloseHandler = () => setDelConfOpen(false);
+
+  const deleteStuff = () => {
+    // Effectue une requette vers le backend(api)
+    axios
+      .delete(
+        `http://localhost:8080/api/stuffs/stuff?id=${location.state.stuff.id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      )
+      .then(() => {
+        delConfCloseHandler();
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error);
+        delConfCloseHandler();
+      });
+  };
+
   return (
     <Container maxWidth="sm">
       <Grid container alignItems="center">
@@ -71,7 +101,9 @@ export default function Stuff() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button variant="danger">Supprimer</Button>
+                <Button variant="danger" onClick={() => setDelConfOpen(true)}>
+                  Supprimer
+                </Button>
               </CardActions>
             </Card>
           </Grid>
@@ -82,6 +114,12 @@ export default function Stuff() {
         )}
       </Grid>
       <AuthDialog open={authDialogOpen} closeHandler={authDialogCloseHandler} />
+      <ConfDialog
+        open={delConfOpen}
+        closeHandler={delConfCloseHandler}
+        title={stuff?.title}
+        toDo={deleteStuff}
+      />
     </Container>
   );
 }
