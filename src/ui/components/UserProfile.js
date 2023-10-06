@@ -1,5 +1,5 @@
 import React from "react";
 
 export default function UserProfile() {
-  return <div className="profile">P</div>;
+  return <div className="user__profile">P</div>;
 }
