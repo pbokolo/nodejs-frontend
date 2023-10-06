@@ -2,11 +2,11 @@ import React from "react";
 import AppLogo from "../components/AppLogo";
 import UserProfilePicture from "../components/UserProfilePicture";
 
-export default function AppBar() {
+export default function header() {
   return (
-    <div className="appbar">
+    <header className="header">
       <AppLogo />
       <UserProfilePicture />
-    </div>
+    </header>
   );
 }

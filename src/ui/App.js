@@ -1,9 +1,9 @@
-import AppBar from "./layouts/AppBar";
+import Header from "./layouts/Header";
 
 function App() {
   return (
     <main className="app">
-      <AppBar />
+      <Header />
       <section className="section"></section>
     </main>
   );
