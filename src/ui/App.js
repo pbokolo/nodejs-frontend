@@ -2,9 +2,10 @@ import AppBar from "./layouts/AppBar";
 
 function App() {
   return (
-    <div className="app">
+    <main className="app">
       <AppBar />
-    </div>
+      <section className="section"></section>
+    </main>
   );
 }
 
