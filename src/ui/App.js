@@ -1,5 +1,11 @@
+import AppBar from "./layouts/AppBar";
+
 function App() {
-  return <div>Market place</div>;
+  return (
+    <div className="app">
+      <AppBar />
+    </div>
+  );
 }
 
 export default App;
