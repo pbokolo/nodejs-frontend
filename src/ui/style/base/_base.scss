@@ -8,9 +8,9 @@
 html {
   // Desfines 1rem = 10px(10px/16px = 0.625)
   font-size: 62.5%;
+  background-color: var(--color-main-background);
 }
 
 body {
   box-sizing: border-box;
-  background-color: var(--color-main-background);
 }
