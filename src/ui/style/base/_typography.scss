@@ -1,0 +1,30 @@
+.text {
+  font-size: $fs-base;
+  color: var(--color-black);
+
+  &--copyright {
+    font-size: $fs-xs;
+    text-align: center;
+  }
+
+  &--owner {
+    display: inline-block;
+    font-size: $fs-sm;
+    font-weight: 700;
+    text-decoration: underline;
+    clip-path: polygon(5% 0, 100% 0%, 95% 100%, 0% 100%);
+    background-image: linear-gradient(
+      to right bottom,
+      var(--color-black--light),
+      var(--color-black--dark)
+    );
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 0.1rem 0.1rem var(--color-shadow);
+
+    &,
+    &:visited {
+      color: var(--color-white);
+    }
+  }
+}

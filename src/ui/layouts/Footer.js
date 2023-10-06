@@ -12,7 +12,7 @@ export default function Footer() {
         >
           Pierrot Bokolo
         </a>
-        &nbsp;||&nbsp;Free of use for learning but don't claim it as your design
+        &nbsp;Free of use for learning but don't claim it as your design
       </p>
     </footer>
   );
