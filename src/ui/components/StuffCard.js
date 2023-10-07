@@ -1,5 +1,4 @@
 import React from "react";
-import cam from "../../assets/cam.jpeg";
 
 export default function StuffCard() {
   return (
