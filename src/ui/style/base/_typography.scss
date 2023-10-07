@@ -27,4 +27,15 @@
       color: var(--color-white);
     }
   }
+
+  &--stuff-title {
+    font-family: $heading-font;
+    font-size: $fs-h2;
+    font-weight: $fw-bold;
+  }
+
+  &--stuff-price {
+    font-family: $body-font;
+    font-size: $fs-lg;
+  }
 }

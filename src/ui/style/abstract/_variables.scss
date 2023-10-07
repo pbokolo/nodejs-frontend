@@ -79,12 +79,12 @@ $fs-lg: 1.8rem; // 18px
 $fs-xl: 2.4rem; // 24px
 
 /* Heading font sizes */
-$h-1: 2.2rem; // 22px
-$h-2: 2.2rem; // 22px
-$h-3: 1.6rem; // 16px
-$h-4: 1.8rem; // 18px
-$h-5: 1.2rem; // 12px
-$h-6: 1.2rem; // 12px
+$fs-h1: 2.2rem; // 22px
+$fs-h2: 2.2rem; // 22px
+$fs-h3: 1.6rem; // 16px
+$fs-h4: 1.8rem; // 18px
+$fs-h5: 1.2rem; // 12px
+$fs-h6: 1.2rem; // 12px
 
 /* Font weights */
 $fw-light: 100;
@@ -103,3 +103,5 @@ $fw-black: 900;
 
 $header-height: 4.5rem;
 $footer-height: 3rem;
+$card-stuff-width: 30rem;
+$card-stuff-radius: 1rem;
