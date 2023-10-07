@@ -1,89 +1,10 @@
 import React from "react";
+import StuffCard from "../components/StuffCard";
 
 export default function Section() {
   return (
     <section className="section">
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
-      <p>This is the section</p>
+      <StuffCard />
     </section>
   );
 }
