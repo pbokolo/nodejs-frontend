@@ -1,4 +1,9 @@
 .section {
-  padding: calc($header-height + 0.3%) 0 calc($footer-height + 0.3%) 0;
+  padding: calc($header-height + 0.5%) 5rem calc($footer-height + 1%) 5rem;
   background-color: var(--color-main-background);
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
 }

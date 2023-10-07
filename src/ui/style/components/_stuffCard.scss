@@ -1,7 +1,7 @@
 .card {
   &--stuff {
     width: $card-stuff-width;
-    height: calc($card-stuff-width * 1.12);
+    height: calc($card-stuff-width * 1.1);
     overflow: hidden;
     border-radius: $card-stuff-radius;
 

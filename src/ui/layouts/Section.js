@@ -5,6 +5,13 @@ export default function Section() {
   return (
     <section className="section">
       <StuffCard />
+      <StuffCard />
+      <StuffCard />
+      <StuffCard />
+      <StuffCard />
+      <StuffCard />
+      <StuffCard />
+      <StuffCard />
     </section>
   );
 }
