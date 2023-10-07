@@ -8,6 +8,7 @@ export default function Footer() {
         <a
           href="https://github.com/pbokolo"
           target="_blank"
+          rel="noreferrer"
           class="text text--owner"
         >
           Pierrot Bokolo
