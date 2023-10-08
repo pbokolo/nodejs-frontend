@@ -32,6 +32,7 @@
   --color-transparent: #24232300;
   --color-main-background: var(--color-white-d--4);
   --color-surface-background: var(--color-white-d--3);
+  --color-surface-background--transparent: rgba(240, 240, 240, 0.1);
   --color-shadow: #{$color-black--500};
   --color-dialog-overlay: rgba(51, 51, 51, 0.25);
 }

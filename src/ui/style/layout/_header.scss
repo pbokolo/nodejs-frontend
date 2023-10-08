@@ -1,5 +1,6 @@
 .header {
-  background-color: var(--color-surface-background);
+  background-color: var(--color-surface-background--transparent);
+  backdrop-filter: blur(1rem);
   height: var(--dimen-header-height);
   box-shadow: 0 0.1rem 0.1rem var(--color-shadow);
   position: fixed;
@@ -17,7 +18,7 @@
   }
 
   .btn--new-stuff {
-    grid-column: 9 / 12;
+    grid-column: 11 / 12;
     justify-self: flex-end;
   }
 }
