@@ -8,5 +8,16 @@
   width: 100%;
 
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: 17rem repeat(10, 1fr) 17rem;
+  align-items: center;
+
+  .app__logo {
+    grid-column: 2 / 3;
+    justify-content: start;
+  }
+
+  .btn--new-stuff {
+    grid-column: 9 / 12;
+    justify-self: flex-end;
+  }
 }
