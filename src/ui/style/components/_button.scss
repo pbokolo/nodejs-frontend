@@ -11,7 +11,14 @@
   border-radius: 1rem;
   font-size: $fs-base;
 
+  box-shadow: 0 0.15rem 0.15rem var(--color-shadow);
+
   &:hover {
     background-color: var(--color-primary--dark);
+  }
+
+  &:active {
+    box-shadow: 0 0.05rem 0.1rem var(--color-shadow);
+    background-color: var(--color-primary--light);
   }
 }
