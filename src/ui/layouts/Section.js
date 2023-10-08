@@ -3,7 +3,7 @@ import StuffCard from "../components/StuffCard";
 import StuffDialog from "./StuffDialog";
 
 export default function Section() {
-  const [showDialog, setShowDialog] = useState(true);
+  const [showDialog, setShowDialog] = useState(false);
   return (
     <>
       <section className="section">

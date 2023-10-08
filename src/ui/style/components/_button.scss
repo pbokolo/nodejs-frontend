@@ -1,0 +1,17 @@
+.btn {
+  all: unset;
+  cursor: pointer;
+  background-color: var(--color-primary);
+  transition: all 0.2s;
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 1rem;
+  font-size: $fs-base;
+
+  &:hover {
+    background-color: var(--color-primary--dark);
+  }
+}

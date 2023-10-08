@@ -1,12 +1,12 @@
 import React from "react";
 import AppLogo from "../components/AppLogo";
-import UserProfilePicture from "../components/UserProfilePicture";
+import NewStuffBtn from "../components/NewStuffBtn";
 
 export default function header() {
   return (
     <header className="header">
       <AppLogo />
-      <UserProfilePicture />
+      <NewStuffBtn />
     </header>
   );
 }
