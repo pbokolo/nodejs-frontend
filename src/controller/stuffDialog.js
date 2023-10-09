@@ -1,12 +1,18 @@
+import { open, close } from "./stuffDialogSlice";
 class Controller {
-  constructor() {}
+  #dispatch;
+  constructor(dispatch) {
+    this.#dispatch = dispatch;
+  }
 
-  show() {}
+  open() {
+    this.#dispatch(open());
+  }
 
-  close(setState) {
-    setState(false);
+  close() {
+    this.#dispatch(close());
   }
 }
 
 const stuffDialogController = new Controller();
-export { stuffDialogController };
+export { stuffDialogController, Controller };

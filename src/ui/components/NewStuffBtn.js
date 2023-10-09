@@ -1,9 +1,17 @@
 import React from "react";
 import AddIcon from "@mui/icons-material/Add";
+import { useDispatch } from "react-redux";
+import { open } from "../../controller/stuffDialogSlice";
+
+import { Controller } from "../../controller/stuffDialog";
 
 export default function NewStuffBtn() {
+  const dispatch = useDispatch();
+  const dialogController = new Controller(dispatch);
+  const clickHandler = () => dialogController.open();
+
   return (
-    <button className="btn btn--new-stuff">
+    <button onClick={clickHandler} className="btn btn--new-stuff">
       <AddIcon fontSize="large" />
     </button>
   );
