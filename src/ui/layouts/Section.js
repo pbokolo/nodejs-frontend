@@ -8,9 +8,11 @@ export default function Section() {
   const [showDialog, setShowDialog] = useState(false);
   const [stuffs, setStuffs] = useState([]);
 
+  // Each time the component is mounted
   useEffect(() => {
     stuffController.getAll(setStuffs);
   }, []);
+
   return (
     <>
       <section className="section">
