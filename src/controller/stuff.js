@@ -1,13 +1,17 @@
 import axios from "axios";
+import { setList } from "./stuffSlice";
 const api = "http://localhost:4000/api/stuff";
 
 class Stuff {
-  constructor() {}
+  #dispatch;
+  constructor(dispatch) {
+    this.#dispatch = dispatch;
+  }
 
-  async getAll(stateSetter) {
+  async getAll() {
     try {
       const stuffs = await axios.get(api);
-      stateSetter(stuffs.data);
+      this.#dispatch(setList(stuffs.data));
     } catch (error) {
       console.log(error);
     }
@@ -25,5 +29,4 @@ class Stuff {
 }
 
 const stuffController = new Stuff();
-
-export { stuffController };
+export { stuffController, Stuff };
