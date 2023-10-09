@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import FormInput from "../components/FormInput";
+import { stuffController as controller } from "../../controller/stuff";
 
 const initialState = {
   title: "",
   price: "",
   imageUrl: "",
   description: "",
-  userId: "",
+  userId: "pbokolo",
 };
 export default function NewStuffForm() {
   const [stuff, setStuff] = useState(initialState);
@@ -14,8 +15,7 @@ export default function NewStuffForm() {
     setStuff({ ...stuff, [e.target.id]: e.target.value });
   };
   const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(stuff);
+    controller.submitNew(e, stuff);
     setStuff(initialState);
   };
   return (
