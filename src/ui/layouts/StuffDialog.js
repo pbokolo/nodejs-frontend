@@ -16,8 +16,12 @@ export default function StuffDialog() {
   return (
     <div onClick={clickHandler} id="overlay" className="dialog dialog__overlay">
       <div className="dialog__content">
-        <h2 className="text text--title">Vendez un nouvel objet</h2>
-        <NewStuffForm />
+        <div className="dialog__content-header">
+          <h2 className="text text--title">Vendez un nouvel objet</h2>
+        </div>
+        <div className="dialog__content-body">
+          <NewStuffForm />
+        </div>
       </div>
     </div>
   );
