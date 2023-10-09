@@ -13,6 +13,7 @@
     border-radius: 1rem;
     font-size: $fs-base;
     box-shadow: 0 0.15rem 0.15rem var(--color-shadow);
+    text-transform: uppercase;
     &:hover {
       background-color: var(--color-primary--dark);
     }

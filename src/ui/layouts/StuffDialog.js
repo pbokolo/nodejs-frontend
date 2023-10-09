@@ -9,7 +9,11 @@ export default function StuffDialog() {
   const dispatch = useDispatch();
   const controller = new Controller(dispatch);
   const clickHandler = (e) => {
-    if (e.target.id !== "overlay") {
+    if (
+      e.target.id !== "overlay" &&
+      e.target.id !== "closeBtn" &&
+      e.target.id !== "closeIcon"
+    ) {
       return;
     }
     controller.close();
