@@ -8,8 +8,8 @@ import { Stuff } from "../../controller/stuff";
 export default function Section() {
   const dispatch = useDispatch();
   const stuffController = new Stuff(dispatch);
-  const [showDialog, setShowDialog] = useState(false);
   let { list } = useSelector((state) => state.stuffs);
+  let { show } = useSelector((state) => state.stuffDialog);
 
   // Each time the component is mounted
   useEffect(() => {
@@ -23,7 +23,7 @@ export default function Section() {
           <StuffCard key={stuff._id} stuff={stuff} />
         ))}
       </section>
-      {showDialog ? <StuffDialog /> : ""}
+      {show ? <StuffDialog /> : ""}
     </>
   );
 }
