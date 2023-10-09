@@ -18,16 +18,18 @@
     width: 50rem;
     height: min-content;
     padding: 0 0 2rem 0;
-    background-color: white;
+    background-color: var(--color-surface-background);
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     border-radius: 1rem;
+    overflow: hidden;
 
     &-header {
-      padding: 0.5rem 1.6rem;
+      padding: 1rem 1.6rem;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       border-bottom: 0.1rem solid var(--color-dialog-overlay);
     }
 
