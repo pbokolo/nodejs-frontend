@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const stuffDialogSlice = createSlice({
   name: "stuffDialog",
-  initialState: { show: true, type: "new" },
+  initialState: { show: false, type: "new" },
   reducers: {
     open: (state) => {
       state.show = true;
