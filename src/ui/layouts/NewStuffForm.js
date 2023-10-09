@@ -7,9 +7,26 @@ export default function NewStuffForm() {
       <FormInput
         label={"Titre"}
         id="titleTxt"
-        placeholder={"Ex: Macbook pro 2015(15 pouces)"}
+        placeholder={"Ex: Macbook pro"}
         type={"text"}
       />
+      <FormInput
+        label={"Prix"}
+        id="priceTxt"
+        placeholder={"Ex: 30€"}
+        type={"number"}
+      />
+      <FormInput
+        label={"Image"}
+        id="imgUrlTxt"
+        placeholder={"Ex: https://serveur/image.jpg"}
+        type={"text"}
+      />
+
+      <textarea placeholder="Décrivez votre produit" />
+      <br />
+
+      <input type="submit" value={"Vendre"} className="btn" />
     </form>
   );
 }
