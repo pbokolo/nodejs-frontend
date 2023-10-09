@@ -9,9 +9,12 @@ export default function FormInput({
   changeHandler,
 }) {
   return (
-    <fieldset>
-      <label htmlFor={id}>{label}</label>
+    <fieldset className="form__fieldset">
+      <label className="form__fieldset-label text--label" htmlFor={id}>
+        {label}
+      </label>
       <input
+        className="form__fieldset-textinput"
         type={type}
         id={id}
         placeholder={placeholder}

@@ -44,4 +44,9 @@
     font-family: $body-font;
     font-size: $fs-lg;
   }
+
+  &--label {
+    font-size: $fs-xs;
+    font-weight: $fw-normal;
+  }
 }
