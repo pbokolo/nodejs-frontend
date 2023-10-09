@@ -3,7 +3,9 @@ class Controller {
 
   show() {}
 
-  close() {}
+  close(setState) {
+    setState(false);
+  }
 }
 
 const stuffDialogController = new Controller();

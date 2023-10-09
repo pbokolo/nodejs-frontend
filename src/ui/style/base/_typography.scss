@@ -2,6 +2,12 @@
   font-size: $fs-base;
   color: var(--color-black);
 
+  &--title {
+    font-family: $heading-font;
+    font-size: $fs-h1;
+    text-align: center;
+  }
+
   &--copyright {
     font-size: $fs-xs;
     text-align: center;
