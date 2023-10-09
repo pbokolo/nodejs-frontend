@@ -11,7 +11,7 @@ export default function NewStuffBtn() {
   const clickHandler = () => dialogController.open();
 
   return (
-    <button onClick={clickHandler} className="btn btn--new-stuff">
+    <button onClick={clickHandler} className="btn btn--primary">
       <AddIcon fontSize="large" />
     </button>
   );

@@ -53,7 +53,7 @@ export default function NewStuffForm() {
       />
       <br />
 
-      <input type="submit" value={"Vendre"} className="btn" />
+      <input type="submit" value={"Vendre"} className="btn btn--primary" />
     </form>
   );
 }

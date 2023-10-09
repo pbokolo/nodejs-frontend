@@ -1,24 +1,25 @@
 .btn {
   all: unset;
   cursor: pointer;
-  background-color: var(--color-primary);
   transition: all 0.2s;
   display: inline-block;
-  padding: 0.7rem 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  border-radius: 1rem;
-  font-size: $fs-base;
 
-  box-shadow: 0 0.15rem 0.15rem var(--color-shadow);
+  &--primary {
+    background-color: var(--color-primary);
+    padding: 0.7rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 1rem;
+    font-size: $fs-base;
+    box-shadow: 0 0.15rem 0.15rem var(--color-shadow);
+    &:hover {
+      background-color: var(--color-primary--dark);
+    }
 
-  &:hover {
-    background-color: var(--color-primary--dark);
-  }
-
-  &:active {
-    box-shadow: 0 0.05rem 0.1rem var(--color-shadow);
-    background-color: var(--color-primary--light);
+    &:active {
+      box-shadow: 0 0.05rem 0.1rem var(--color-shadow);
+      background-color: var(--color-primary--light);
+    }
   }
 }
