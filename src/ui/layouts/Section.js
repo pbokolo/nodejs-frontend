@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import StuffCard from "../components/StuffCard";
 import StuffDialog from "./StuffDialog";
+import Spinner from "../components/Spinner";
 
 import { Stuff } from "../../controller/stuff";
 
@@ -19,10 +20,13 @@ export default function Section() {
   return (
     <>
       <section className="section">
-        {list.map((stuff) => (
-          <StuffCard key={stuff._id} stuff={stuff} />
-        ))}
+        {list ? (
+          list.map((stuff) => <StuffCard key={stuff._id} stuff={stuff} />)
+        ) : (
+          <Spinner />
+        )}
       </section>
+
       {show ? <StuffDialog /> : ""}
     </>
   );
