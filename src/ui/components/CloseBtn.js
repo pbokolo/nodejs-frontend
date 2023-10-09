@@ -3,8 +3,8 @@ import CloseIcon from "@mui/icons-material/Close";
 
 export default function CloseBtn() {
   return (
-    <button>
-      <CloseIcon className="btn btn--close" />
+    <button className="btn btn--close">
+      <CloseIcon fontSize="large" />
     </button>
   );
 }
