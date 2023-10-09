@@ -19,7 +19,7 @@ export default function NewStuffForm() {
     setStuff(initialState);
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="stuff__form" onSubmit={handleSubmit}>
       <FormInput
         label={"Titre"}
         id="title"
@@ -46,6 +46,7 @@ export default function NewStuffForm() {
       />
 
       <textarea
+        className="form__fieldset-textinput"
         id="description"
         placeholder="Décrivez votre produit"
         value={stuff.description}

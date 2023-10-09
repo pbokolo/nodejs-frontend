@@ -1,5 +1,5 @@
 .form__fieldset {
-  //   all: unset;
+  border: none;
   display: flex;
   flex-direction: column;
   gap: 0.1rem;
@@ -7,6 +7,7 @@
   &-textinput {
     padding: 0.5rem 1rem;
     font-size: $fs-base;
+    font-family: $body-font;
     border: none;
     border: 0.15rem solid var(--color-black--light);
     border-radius: 0.5rem;
