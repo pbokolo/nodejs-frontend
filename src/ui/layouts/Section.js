@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import StuffCard from "../components/StuffCard";
 import StuffDialog from "./StuffDialog";
@@ -15,7 +15,7 @@ export default function Section() {
   // Each time the component is mounted
   useEffect(() => {
     stuffController.getAll();
-  }, []);
+  });
 
   return (
     <>

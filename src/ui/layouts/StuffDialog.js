@@ -1,6 +1,5 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { close } from "../../controller/stuffDialogSlice";
 import NewStuffForm from "./NewStuffForm";
 import CloseBtn from "../components/CloseBtn";
 import { Controller } from "../../controller/stuffDialog";
