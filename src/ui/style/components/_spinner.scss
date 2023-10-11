@@ -3,18 +3,18 @@
   height: 40px;
   display: grid;
   border-radius: 50%;
-  mask: radial-gradient(farthest-side, #0000 40%, #474bff 41%);
-  -webkit-mask: radial-gradient(farthest-side, #0000 40%, #474bff 41%);
+  mask: radial-gradient(farthest-side, #0000 40%, #2196f3 41%);
+  -webkit-mask: radial-gradient(farthest-side, #0000 40%, #2196f3 41%);
   background: linear-gradient(
         0deg,
-        rgba(71, 75, 255, 0.5) 50%,
-        rgba(71, 75, 255, 1) 0
+        rgba(33, 150, 243, 0.5) 50%,
+        rgba(33, 150, 243, 1) 0
       )
       center/4.5px 100%,
     linear-gradient(
         90deg,
-        rgba(71, 75, 255, 0.25) 50%,
-        rgba(71, 75, 255, 0.75) 0
+        rgba(33, 150, 243, 0.25) 50%,
+        rgba(33, 150, 243, 0.75) 0
       )
       center/100% 4.5px;
   background-repeat: no-repeat;
