@@ -1,7 +1,9 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { Stuff } from "../../controller/stuff";
+import { setType } from "../../controller/stuffDialogSlice";
 import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
 
 export default function StuffDetails({ stuff }) {
   const dispatch = useDispatch();
@@ -9,6 +11,10 @@ export default function StuffDetails({ stuff }) {
 
   const handleDelete = () => {
     controller.delete(stuff);
+  };
+
+  const handleUpdate = () => {
+    dispatch(setType("update"));
   };
   return (
     <div className="stuff__details">
@@ -25,7 +31,9 @@ export default function StuffDetails({ stuff }) {
         <button onClick={handleDelete} className="btn btn--text btn--danger">
           <DeleteIcon fontSize="large" /> supprimer
         </button>
-        <button className="btn btn--text">modifier</button>
+        <button onClick={handleUpdate} className="btn btn--text">
+          <EditIcon fontSize="large" /> modifier
+        </button>
       </div>
     </div>
   );

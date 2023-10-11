@@ -9,6 +9,7 @@ export default function StuffDialog() {
   const dispatch = useDispatch();
   const controller = new Controller(dispatch);
   const { selectedStuff } = useSelector((state) => state.stuffs);
+  const { type } = useSelector((state) => state.stuffDialog);
 
   const clickHandler = (e) => {
     if (
@@ -30,11 +31,9 @@ export default function StuffDialog() {
           <CloseBtn />
         </div>
         <div className="dialog__content-body">
-          {selectedStuff ? (
-            <StuffDetails stuff={selectedStuff} />
-          ) : (
-            <StuffForm selectedStuff={selectedStuff} />
-          )}
+          {type === "new" && <StuffForm />}
+          {type === "update" && <StuffForm selectedStuff={selectedStuff} />}
+          {type === "details" && <StuffDetails stuff={selectedStuff} />}
         </div>
       </div>
     </div>
