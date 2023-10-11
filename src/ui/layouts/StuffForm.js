@@ -1,27 +1,22 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import FormInput from "../components/FormInput";
-import { stuffController as controller } from "../../controller/stuff";
+import { Stuff } from "../../controller/stuff";
 
-const initialState = {
-  title: "",
-  price: "",
-  imageUrl: "",
-  description: "",
-  userId: "pbokolo",
-};
 export default function StuffForm({ selectedStuff }) {
-  const [stuff, setStuff] = useState(selectedStuff || initialState);
+  const dispatch = useDispatch();
+  const controller = new Stuff(dispatch);
+  const [stuff, setStuff] = useState(selectedStuff || controller.initialState);
   const handleInputChange = (e) => {
     setStuff({ ...stuff, [e.target.id]: e.target.value });
   };
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!selectedStuff) {
-      controller.submitNew(stuff);
+      controller.submitNew(stuff, setStuff);
       return;
     }
-    controller.submitUpdate(stuff);
-    // setStuff(initialState);
+    controller.submitUpdate(stuff, setStuff);
   };
   return (
     <form className="stuff__form" onSubmit={handleSubmit}>
