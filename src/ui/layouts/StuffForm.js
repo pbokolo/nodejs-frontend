@@ -49,7 +49,7 @@ export default function StuffForm({ selectedStuff }) {
       />
 
       <textarea
-        className="form__fieldset-textinput"
+        className="form__fieldset-textinput form__fieldset-textinput--textarea"
         id="description"
         placeholder="Décrivez votre produit"
         value={stuff.description}

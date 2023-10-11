@@ -13,6 +13,10 @@
     background-color: transparent;
     border-radius: 0.5rem;
     transition: all 0.2s;
+    &--textarea {
+      height: 12rem;
+      overflow: scroll;
+    }
 
     &:focus {
       outline: 0.1rem solid var(--color-black);
