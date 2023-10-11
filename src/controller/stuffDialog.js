@@ -1,12 +1,13 @@
-import { open, close } from "./stuffDialogSlice";
+import { open, close, setType } from "./stuffDialogSlice";
 class Controller {
   #dispatch;
   constructor(dispatch) {
     this.#dispatch = dispatch;
   }
 
-  open() {
+  open(type = "new") {
     this.#dispatch(open());
+    this.#dispatch(setType(type));
   }
 
   close() {
