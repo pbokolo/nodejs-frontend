@@ -46,6 +46,16 @@ class Stuff {
     }
   }
 
+  async delete(stuff) {
+    try {
+      const response = await axios.delete(`${api}?id=${stuff._id}`, stuff);
+      console.log(response);
+      this.#closeDialog();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   #closeDialog() {
     this.#dispatch(close());
     this.#dispatch(setSelectedStuff(null));

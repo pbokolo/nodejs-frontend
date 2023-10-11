@@ -1,6 +1,15 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { Stuff } from "../../controller/stuff";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 export default function StuffDetails({ stuff }) {
+  const dispatch = useDispatch();
+  const controller = new Stuff(dispatch);
+
+  const handleDelete = () => {
+    controller.delete(stuff);
+  };
   return (
     <div className="stuff__details">
       <img
@@ -13,7 +22,9 @@ export default function StuffDetails({ stuff }) {
         <p className="text text--stuff-price">{`${stuff.description}€`}</p>
       </div>
       <div className="stuff__details-actions">
-        <button className="btn btn--text btn--danger">supprimer</button>
+        <button onClick={handleDelete} className="btn btn--text btn--danger">
+          <DeleteIcon fontSize="large" /> supprimer
+        </button>
         <button className="btn btn--text">modifier</button>
       </div>
     </div>
