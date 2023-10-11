@@ -26,26 +26,29 @@ class Stuff {
     }
   }
 
-  async submitNew(stuff, setState) {
+  async submitNew(stuff) {
     try {
       const response = await axios.post(api, stuff);
-      setState(this.initialState);
       console.log(response);
+      this.#closeDialog();
     } catch (error) {
       console.log(error);
     }
   }
 
-  async submitUpdate(stuff, setState) {
+  async submitUpdate(stuff) {
     try {
       const response = await axios.put(api, stuff);
       console.log(response);
-      setState(this.initialState);
-      this.#dispatch(close());
-      this.#dispatch(setSelectedStuff(null));
+      this.#closeDialog();
     } catch (error) {
       console.log(error);
     }
+  }
+
+  #closeDialog() {
+    this.#dispatch(close());
+    this.#dispatch(setSelectedStuff(null));
   }
 }
 

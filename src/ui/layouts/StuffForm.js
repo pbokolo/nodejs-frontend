@@ -7,11 +7,14 @@ export default function StuffForm({ selectedStuff }) {
   const dispatch = useDispatch();
   const controller = new Stuff(dispatch);
   const [stuff, setStuff] = useState(selectedStuff || controller.initialState);
+  const [editable, setEditable] = useState(true);
   const handleInputChange = (e) => {
+    if (!editable) return;
     setStuff({ ...stuff, [e.target.id]: e.target.value });
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    setEditable(false);
     if (!selectedStuff) {
       controller.submitNew(stuff, setStuff);
       return;
