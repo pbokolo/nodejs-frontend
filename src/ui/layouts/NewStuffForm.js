@@ -9,8 +9,8 @@ const initialState = {
   description: "",
   userId: "pbokolo",
 };
-export default function NewStuffForm() {
-  const [stuff, setStuff] = useState(initialState);
+export default function NewStuffForm({ selectedStuff }) {
+  const [stuff, setStuff] = useState(selectedStuff || initialState);
   const handleInputChange = (e) => {
     setStuff({ ...stuff, [e.target.id]: e.target.value });
   };

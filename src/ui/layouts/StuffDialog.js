@@ -29,7 +29,7 @@ export default function StuffDialog() {
           <CloseBtn />
         </div>
         <div className="dialog__content-body">
-          <NewStuffForm />
+          <NewStuffForm selectedStuff={selectedStuff} />
         </div>
       </div>
     </div>
