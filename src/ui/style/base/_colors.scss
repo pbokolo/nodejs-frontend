@@ -16,6 +16,10 @@
   --color-error: #{$color-red--500};
   --color-error--dark: #{$color-red--700};
 
+  --color-danger--light: var(--color-error--light);
+  --color-danger: var(--color-error);
+  --color-danger--dark: var(--color-error--dark);
+
   --color-black--light: #{$color-black--600};
   --color-black: #{$color-black--800};
   --color-black--dark: #{$color-black--900};

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import StuffForm from "./StuffForm";
 import CloseBtn from "../components/CloseBtn";
 import { Controller } from "../../controller/stuffDialog";
+import StuffDetails from "./StuffDetails";
 
 export default function StuffDialog() {
   const dispatch = useDispatch();
@@ -29,7 +30,11 @@ export default function StuffDialog() {
           <CloseBtn />
         </div>
         <div className="dialog__content-body">
-          <StuffForm selectedStuff={selectedStuff} />
+          {selectedStuff ? (
+            <StuffDetails stuff={selectedStuff} />
+          ) : (
+            <StuffForm selectedStuff={selectedStuff} />
+          )}
         </div>
       </div>
     </div>
