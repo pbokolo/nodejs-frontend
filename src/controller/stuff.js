@@ -17,10 +17,20 @@ class Stuff {
     }
   }
 
-  async submitNew(e, stuff) {
-    e.preventDefault();
+  async submitNew(stuff) {
     try {
       const response = await axios.post(api, stuff);
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async submitUpdate(stuff) {
+    try {
+      const response = await axios.put(api, stuff, {
+        params: { id: stuff._id },
+      });
       console.log(response);
     } catch (error) {
       console.log(error);

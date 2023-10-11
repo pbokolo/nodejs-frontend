@@ -15,12 +15,13 @@ export default function StuffForm({ selectedStuff }) {
     setStuff({ ...stuff, [e.target.id]: e.target.value });
   };
   const handleSubmit = (e) => {
+    e.preventDefault();
     if (!selectedStuff) {
-      controller.submitNew(e, stuff);
+      controller.submitNew(stuff);
       return;
     }
-    console.log("Modification...");
-    setStuff(initialState);
+    controller.submitUpdate(stuff);
+    // setStuff(initialState);
   };
   return (
     <form className="stuff__form" onSubmit={handleSubmit}>

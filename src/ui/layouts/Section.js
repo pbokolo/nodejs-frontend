@@ -12,7 +12,7 @@ export default function Section() {
   const dispatch = useDispatch();
   const stuffController = new Stuff(dispatch);
   const dialogController = new Controller(dispatch);
-  let { list, selectedStuff } = useSelector((state) => state.stuffs);
+  let { list } = useSelector((state) => state.stuffs);
   let { show } = useSelector((state) => state.stuffDialog);
 
   // Each time the component is mounted
