@@ -9,13 +9,17 @@ const initialState = {
   description: "",
   userId: "pbokolo",
 };
-export default function NewStuffForm({ selectedStuff }) {
+export default function StuffForm({ selectedStuff }) {
   const [stuff, setStuff] = useState(selectedStuff || initialState);
   const handleInputChange = (e) => {
     setStuff({ ...stuff, [e.target.id]: e.target.value });
   };
   const handleSubmit = (e) => {
-    controller.submitNew(e, stuff);
+    if (!selectedStuff) {
+      controller.submitNew(e, stuff);
+      return;
+    }
+    console.log("Modification...");
     setStuff(initialState);
   };
   return (
@@ -54,7 +58,11 @@ export default function NewStuffForm({ selectedStuff }) {
       />
       <br />
 
-      <input type="submit" value={"Vendre"} className="btn btn--primary" />
+      <input
+        type="submit"
+        value={selectedStuff ? "Modifier" : "Vendre"}
+        className="btn btn--primary"
+      />
     </form>
   );
 }

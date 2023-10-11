@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import NewStuffForm from "./NewStuffForm";
+import StuffForm from "./StuffForm";
 import CloseBtn from "../components/CloseBtn";
 import { Controller } from "../../controller/stuffDialog";
 
@@ -29,7 +29,7 @@ export default function StuffDialog() {
           <CloseBtn />
         </div>
         <div className="dialog__content-body">
-          <NewStuffForm selectedStuff={selectedStuff} />
+          <StuffForm selectedStuff={selectedStuff} />
         </div>
       </div>
     </div>
