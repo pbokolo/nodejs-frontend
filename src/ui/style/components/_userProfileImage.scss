@@ -1,7 +1,12 @@
 .img {
-  &__user {
+  &__user-profile-picture {
     display: inline-block;
-    width: 4rem;
-    margin-right: 17.5rem;
+    &--sm {
+      cursor: pointer;
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      margin-left: 1rem;
+    }
   }
 }
