@@ -7,6 +7,7 @@ import AuthForm from "./AuthForm";
 export default function AuthDialog() {
   const dispatch = useDispatch();
   const controller = new Controller(dispatch);
+
   const clickHandler = (e) => {
     if (
       e.target.id !== "overlay" &&
