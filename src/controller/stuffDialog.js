@@ -1,4 +1,5 @@
 import { open, close, setType } from "./stuffDialogSlice";
+import { setSelectedStuff } from "./stuffSlice";
 class Controller {
   #dispatch;
   constructor(dispatch) {
@@ -12,6 +13,7 @@ class Controller {
 
   close() {
     this.#dispatch(close());
+    this.#dispatch(setSelectedStuff(null));
   }
 }
 
