@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { Controller } from "../../controller/authDialog";
 import CloseBtn from "../components/CloseBtn";
+import AuthForm from "./AuthForm";
 
 export default function AuthDialog() {
   const dispatch = useDispatch();
@@ -23,7 +24,9 @@ export default function AuthDialog() {
           <h2 className="text text--title">Bienvenu!</h2>
           <CloseBtn />
         </div>
-        <div className="dialog__content-body"></div>
+        <div className="dialog__content-body">
+          <AuthForm />
+        </div>
       </div>
     </div>
   );
