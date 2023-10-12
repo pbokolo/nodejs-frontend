@@ -2,7 +2,7 @@ import axios from "axios";
 import { setList } from "./stuffSlice";
 import { close } from "./stuffDialogSlice";
 import { setSelectedStuff } from "./stuffSlice";
-const api = "http://localhost:4000/api/stuff";
+const api = "http://localhost:4000/api/stuffs";
 
 class Stuff {
   #dispatch;
@@ -48,7 +48,9 @@ class Stuff {
 
   async delete(stuff) {
     try {
-      const response = await axios.delete(`${api}?id=${stuff._id}`, stuff);
+      const response = await axios.delete(
+        `http://localhost:4000/api/stuffs/stuff?id=${stuff._id}`
+      );
       console.log(response);
       this.#closeDialog();
     } catch (error) {
