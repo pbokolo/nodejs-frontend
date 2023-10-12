@@ -22,7 +22,7 @@ export default function StuffForm({ selectedStuff }) {
     controller.submitUpdate(stuff, setStuff);
   };
   return (
-    <form className="stuff__form" onSubmit={handleSubmit}>
+    <form className="form" onSubmit={handleSubmit}>
       <FormInput
         label={"Titre"}
         id="title"
