@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const authSlice = createSlice({
   name: "auth",
-  initialState: { token: null, expireDate: null, authDialog: false },
+  initialState: { token: null, expireDate: null, authDialog: true },
   reducers: {
     openAuthDialog: (state) => {
       state.authDialog = true;

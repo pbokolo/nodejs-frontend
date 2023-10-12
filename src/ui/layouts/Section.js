@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import StuffCard from "../components/StuffCard";
 import StuffDialog from "./StuffDialog";
 import Spinner from "../components/Spinner";
+import AuthDialog from "./AuthDialog";
 
 import { Stuff } from "../../controller/stuff";
 import { Controller } from "../../controller/stuffDialog";
@@ -14,6 +15,7 @@ export default function Section() {
   const dialogController = new Controller(dispatch);
   let { list } = useSelector((state) => state.stuffs);
   let { show } = useSelector((state) => state.stuffDialog);
+  const { authDialog } = useSelector((state) => state.auth);
 
   // Each time the component is mounted
   useEffect(() => {
@@ -39,6 +41,7 @@ export default function Section() {
       </section>
 
       {show ? <StuffDialog /> : ""}
+      {authDialog ? <AuthDialog /> : ""}
     </>
   );
 }
