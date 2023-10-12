@@ -9,6 +9,7 @@ export default function AuthForm() {
   const controller = new Controller(dispatch);
   const [creds, setCreds] = useState(controller.initialState);
   const [editable, setEditable] = useState(true);
+  const [type, setType] = useState("signin");
 
   /* EVENT HANDLERS */
   const handleSubmit = (e) => {
@@ -18,6 +19,21 @@ export default function AuthForm() {
   const handleInputChange = (e) => {
     if (!editable) return;
     setCreds({ ...creds, [e.target.id]: e.target.value });
+  };
+  const handleCtaClick = () => {
+    let mode = "";
+    switch (type) {
+      case "signin":
+        mode = "signup";
+        break;
+      case "signup":
+        mode = "signin";
+        break;
+      default:
+        mode = "signin";
+        break;
+    }
+    setType(mode);
   };
 
   return (
@@ -34,21 +50,35 @@ export default function AuthForm() {
         <FormInput
           label={"Mot de passe"}
           id="password"
-          placeholder={"Ex: secred"}
+          placeholder={"Ex: secret"}
           type={"password"}
           value={creds.password}
           changeHandler={handleInputChange}
         />
+        {type === "signup" ? (
+          <FormInput
+            label={"Retaper le mot de passe"}
+            id="repassword"
+            placeholder={"Ex: secret"}
+            type={"password"}
+            value={creds.repassword}
+            changeHandler={handleInputChange}
+          />
+        ) : (
+          ""
+        )}
         <br />
         <fieldset className="form__fieldset">
           <input
             type="submit"
-            value={"Connexion"}
+            value={type === "signin" ? "Connexion" : "Créer compte"}
             className="btn btn--primary"
           />
         </fieldset>
       </form>
-      <p className="text text--cta">Créez un compte ici</p>
+      <p onClick={handleCtaClick} className="text text--cta">
+        {type === "signin" ? "Créez un compte ici" : "Connexion"}
+      </p>
     </>
   );
 }
