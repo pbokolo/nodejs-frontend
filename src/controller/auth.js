@@ -6,7 +6,7 @@ class Controller {
   }
 
   signup(creds) {}
-  signup(creds) {}
+  signin(creds) {}
 }
 
 export { Controller };
