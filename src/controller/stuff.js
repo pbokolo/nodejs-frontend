@@ -28,7 +28,7 @@ class Stuff {
 
   async submitNew(stuff) {
     try {
-      const response = await axios.post(api, stuff);
+      const response = await axios.post(`${api}/stuff`, stuff);
       console.log(response);
       this.#closeDialog();
     } catch (error) {
@@ -38,7 +38,7 @@ class Stuff {
 
   async submitUpdate(stuff) {
     try {
-      const response = await axios.put(api, stuff);
+      const response = await axios.put(`${api}/stuff?id=${stuff._id}`, stuff);
       console.log(response);
       this.#closeDialog();
     } catch (error) {
@@ -48,9 +48,7 @@ class Stuff {
 
   async delete(stuff) {
     try {
-      const response = await axios.delete(
-        `http://localhost:4000/api/stuffs/stuff?id=${stuff._id}`
-      );
+      const response = await axios.delete(`${api}/stuff?id=${stuff._id}`);
       console.log(response);
       this.#closeDialog();
     } catch (error) {
