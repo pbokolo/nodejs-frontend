@@ -46,9 +46,9 @@ class Stuff {
     }
   }
 
-  async delete(stuff) {
+  async delete(id) {
     try {
-      const response = await axios.delete(`${api}/stuff?id=${stuff._id}`);
+      const response = await axios.delete(`${api}/stuff?id=${id}`);
       console.log(response);
       this.#closeDialog();
     } catch (error) {

@@ -10,7 +10,7 @@ export default function StuffDetails({ stuff }) {
   const controller = new Stuff(dispatch);
 
   const handleDelete = () => {
-    controller.delete(stuff);
+    controller.delete(stuff._id);
   };
 
   const handleUpdate = () => {
