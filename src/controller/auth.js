@@ -1,12 +1,12 @@
 import axios from "axios";
 const api = "http://localhost:4000/api/auth";
-import { closeAuthDialog } from "./authSlice";
 
 class Controller {
-  #dispatch;
+  #authDialog;
   initialState = { email: "", password: "", repassword: "" };
-  constructor(dispatch) {
-    this.dispatch = dispatch;
+
+  constructor(authDialog) {
+    this.#authDialog = authDialog;
   }
 
   handleSubmit(e, type, creds, setEditable, setCookies) {
@@ -39,6 +39,7 @@ class Controller {
       const response = await axios.post(`${api}/signin`, creds);
       const { userId, token } = response.data;
       setCookies("user", { userId, token }, { path: "/" });
+      this.#authDialog.close();
     } catch (error) {
       console.log(error);
     }

@@ -3,12 +3,15 @@ import { useCookies } from "react-cookie";
 import FormInput from "../components/FormInput";
 import { useDispatch } from "react-redux";
 import { Controller } from "../../controller/auth";
+import { Controller as AuthDialogController } from "../../controller/authDialog";
 
 export default function AuthForm() {
   const [cookies, setCookies] = useCookies(["user"]);
   /* STATES */
   const dispatch = useDispatch();
-  const controller = new Controller(dispatch);
+  const authDialogController = new AuthDialogController(dispatch);
+  const controller = new Controller(authDialogController);
+
   const [creds, setCreds] = useState(controller.initialState);
   const [editable, setEditable] = useState(true);
   const [type, setType] = useState("signin");
