@@ -12,10 +12,6 @@ export default function AuthForm() {
   const [type, setType] = useState("signin");
 
   /* EVENT HANDLERS */
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setEditable(false);
-  };
   const handleInputChange = (e) => {
     if (!editable) return;
     setCreds({ ...creds, [e.target.id]: e.target.value });
@@ -38,7 +34,10 @@ export default function AuthForm() {
 
   return (
     <>
-      <form className="form" onSubmit={handleSubmit}>
+      <form
+        className="form"
+        onSubmit={(e) => controller.handleSubmit(e, type, creds, setEditable)}
+      >
         <FormInput
           label={"Email"}
           id="email"
