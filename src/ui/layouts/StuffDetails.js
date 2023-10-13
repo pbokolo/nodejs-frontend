@@ -1,11 +1,15 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { useCookies } from "react-cookie";
+
 import { Stuff } from "../../controller/stuff";
 import { setType } from "../../controller/stuffDialogSlice";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 
 export default function StuffDetails({ stuff }) {
+  const [cookies, setCookies] = useCookies(["user"]);
+
   const dispatch = useDispatch();
   const controller = new Stuff(dispatch);
 
@@ -27,14 +31,18 @@ export default function StuffDetails({ stuff }) {
         <p className="text text--stuff-price">{`${stuff.price}€`}</p>
         <p className="text text--stuff-price">{`${stuff.description}€`}</p>
       </div>
-      <div className="stuff__details-actions">
-        <button onClick={handleDelete} className="btn btn--text btn--danger">
-          <DeleteIcon fontSize="large" /> supprimer
-        </button>
-        <button onClick={handleUpdate} className="btn btn--text">
-          <EditIcon fontSize="large" /> modifier
-        </button>
-      </div>
+      {cookies ? (
+        <div className="stuff__details-actions">
+          <button onClick={handleDelete} className="btn btn--text btn--danger">
+            <DeleteIcon fontSize="large" /> supprimer
+          </button>
+          <button onClick={handleUpdate} className="btn btn--text">
+            <EditIcon fontSize="large" /> modifier
+          </button>
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 }
