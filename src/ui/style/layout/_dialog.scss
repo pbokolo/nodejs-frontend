@@ -17,7 +17,7 @@
   &__content {
     width: 50rem;
     height: min-content;
-    padding: 0 0 2rem 0;
+    // padding: 0 0 2rem 0;
     background-color: var(--color-surface-background);
     display: flex;
     flex-direction: column;
@@ -31,10 +31,6 @@
       justify-content: space-between;
       align-items: center;
       border-bottom: 0.1rem solid var(--color-dialog-overlay);
-    }
-
-    &-body {
-      padding: 0 1.6rem;
     }
   }
 }
