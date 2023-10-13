@@ -31,7 +31,7 @@ export default function StuffDetails({ stuff }) {
         <p className="text text--stuff-price">{`${stuff.price}€`}</p>
         <p className="text text--stuff-price">{`${stuff.description}€`}</p>
       </div>
-      {cookies.user?.id === stuff.userId ? (
+      {cookies.user?.userId === stuff.userId ? (
         <div className="stuff__details-actions">
           <button onClick={handleDelete} className="btn btn--text btn--danger">
             <DeleteIcon fontSize="large" /> supprimer
