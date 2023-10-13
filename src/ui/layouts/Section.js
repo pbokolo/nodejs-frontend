@@ -33,7 +33,6 @@ export default function Section() {
     dispatch(setSelectedStuff(item));
     dialogController.open("details");
   };
-  console.log(cookies);
   return (
     <>
       <section onClick={handleClick} className="section">
