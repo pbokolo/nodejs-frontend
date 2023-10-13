@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useCookies } from "react-cookie";
 import FormInput from "../components/FormInput";
 import { useDispatch } from "react-redux";
 import { Controller } from "../../controller/auth";
 
 export default function AuthForm() {
+  const [cookies, setCookies] = useCookies(["user"]);
   /* STATES */
   const dispatch = useDispatch();
   const controller = new Controller(dispatch);
@@ -36,7 +38,9 @@ export default function AuthForm() {
     <>
       <form
         className="form"
-        onSubmit={(e) => controller.handleSubmit(e, type, creds, setEditable)}
+        onSubmit={(e) =>
+          controller.handleSubmit(e, type, creds, setEditable, setCookies)
+        }
       >
         <FormInput
           label={"Email"}

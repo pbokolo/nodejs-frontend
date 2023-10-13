@@ -1,5 +1,7 @@
 import axios from "axios";
 const api = "http://localhost:4000/api/auth";
+import { closeAuthDialog } from "./authSlice";
+
 class Controller {
   #dispatch;
   initialState = { email: "", password: "", repassword: "" };
@@ -7,13 +9,13 @@ class Controller {
     this.dispatch = dispatch;
   }
 
-  handleSubmit(e, type, creds, setEditable) {
+  handleSubmit(e, type, creds, setEditable, setCookies) {
     e.preventDefault();
     setEditable(false);
 
     switch (type) {
       case "signin":
-        this.#signin(creds);
+        this.#signin(creds, setCookies);
         break;
       case "signup":
         this.#signup(creds);
@@ -32,10 +34,11 @@ class Controller {
       console.log(error);
     }
   }
-  async #signin(creds) {
+  async #signin(creds, setCookies) {
     try {
       const response = await axios.post(`${api}/signin`, creds);
-      console.log(response);
+      const { userId, token } = response.data;
+      setCookies("user", { userId, token }, { path: "/" });
     } catch (error) {
       console.log(error);
     }
