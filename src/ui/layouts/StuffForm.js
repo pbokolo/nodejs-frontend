@@ -55,7 +55,6 @@ export default function StuffForm({ selectedStuff }) {
         value={stuff.description}
         onChange={handleInputChange}
       />
-      <br />
 
       <input
         type="submit"
