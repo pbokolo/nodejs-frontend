@@ -11,7 +11,7 @@ class Stuff {
     price: "",
     imageUrl: "",
     description: "",
-    userId: "pbokolo",
+    userId: "",
   };
   constructor(dispatch) {
     this.#dispatch = dispatch;

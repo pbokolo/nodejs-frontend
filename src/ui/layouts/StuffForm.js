@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useCookies } from "react-cookie";
 import FormInput from "../components/FormInput";
 import { Stuff } from "../../controller/stuff";
 
 export default function StuffForm({ selectedStuff }) {
   const dispatch = useDispatch();
   const controller = new Stuff(dispatch);
+
   const [stuff, setStuff] = useState(selectedStuff || controller.initialState);
   const [editable, setEditable] = useState(true);
+  const [cookies, setCookes] = useCookies(["user"]);
+
   const handleInputChange = (e) => {
     if (!editable) return;
     setStuff({ ...stuff, [e.target.id]: e.target.value });
@@ -16,6 +20,7 @@ export default function StuffForm({ selectedStuff }) {
     e.preventDefault();
     setEditable(false);
     if (!selectedStuff) {
+      stuff.userId = cookies.user.userId;
       controller.submitNew(stuff, setStuff);
       return;
     }
