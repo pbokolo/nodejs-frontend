@@ -28,11 +28,7 @@ export default function StuffForm({ selectedStuff }) {
   };
   return (
     <form className="form" onSubmit={handleSubmit}>
-      <img
-        className="card--stuff__image"
-        alt={stuff.title}
-        src={stuff.imageUrl}
-      />
+      <img className="img img--stuff" alt={stuff.title} src={stuff.imageUrl} />
       <FormInput
         label={"Image"}
         id="imageUrl"
@@ -41,6 +37,7 @@ export default function StuffForm({ selectedStuff }) {
         value={stuff.imageUrl}
         changeHandler={handleInputChange}
       />
+      <div className="test">
       <FormInput
         label={"Titre"}
         id="title"
@@ -57,6 +54,7 @@ export default function StuffForm({ selectedStuff }) {
         value={stuff.price}
         changeHandler={handleInputChange}
       />
+      </div>
 
       <textarea
         className="form__fieldset-textinput form__fieldset-textinput--textarea"
