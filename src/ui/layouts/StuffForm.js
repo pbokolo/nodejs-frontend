@@ -28,6 +28,19 @@ export default function StuffForm({ selectedStuff }) {
   };
   return (
     <form className="form" onSubmit={handleSubmit}>
+      <img
+        className="card--stuff__image"
+        alt={stuff.title}
+        src={stuff.imageUrl}
+      />
+      <FormInput
+        label={"Image"}
+        id="imageUrl"
+        placeholder={"Ex: https://serveur/image.jpg"}
+        type={"text"}
+        value={stuff.imageUrl}
+        changeHandler={handleInputChange}
+      />
       <FormInput
         label={"Titre"}
         id="title"
@@ -42,14 +55,6 @@ export default function StuffForm({ selectedStuff }) {
         placeholder={"Ex: 30€"}
         type={"number"}
         value={stuff.price}
-        changeHandler={handleInputChange}
-      />
-      <FormInput
-        label={"Image"}
-        id="imageUrl"
-        placeholder={"Ex: https://serveur/image.jpg"}
-        type={"text"}
-        value={stuff.imageUrl}
         changeHandler={handleInputChange}
       />
 
