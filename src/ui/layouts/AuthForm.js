@@ -38,7 +38,7 @@ export default function AuthForm() {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form className="form" onSubmit={handleSubmit}>
         <FormInput
           label={"Email"}
           id="email"
@@ -67,7 +67,6 @@ export default function AuthForm() {
         ) : (
           ""
         )}
-        <br />
         <fieldset className="form__fieldset">
           <input
             type="submit"
