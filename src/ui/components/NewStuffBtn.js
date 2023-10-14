@@ -7,6 +7,7 @@ import { Controller } from "../../controller/stuffDialog";
 import { Controller as AuthController } from "../../controller/authDialog";
 
 export default function NewStuffBtn() {
+  // eslint-disable-next-line
   const [cookies, setCookies] = useCookies(["user"]);
   const dispatch = useDispatch();
   const dialogController = new Controller(dispatch);

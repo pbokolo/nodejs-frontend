@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useCookies } from "react-cookie";
 
 import StuffCard from "../components/StuffCard";
 import StuffDialog from "./StuffDialog";
@@ -12,8 +11,6 @@ import { Controller } from "../../controller/stuffDialog";
 import { setSelectedStuff } from "../../controller/stuffSlice";
 
 export default function Section() {
-  const [cookies, setCookies] = useCookies(["user"]);
-
   const dispatch = useDispatch();
   const stuffController = new Stuff(dispatch);
   const dialogController = new Controller(dispatch);

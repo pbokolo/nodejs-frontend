@@ -10,6 +10,7 @@ export default function StuffForm({ selectedStuff }) {
 
   const [stuff, setStuff] = useState(selectedStuff || controller.initialState);
   const [editable, setEditable] = useState(true);
+  // eslint-disable-next-line
   const [cookies, setCookes] = useCookies(["user"]);
 
   const handleInputChange = (e) => {
@@ -38,22 +39,22 @@ export default function StuffForm({ selectedStuff }) {
         changeHandler={handleInputChange}
       />
       <div className="test">
-      <FormInput
-        label={"Titre"}
-        id="title"
-        placeholder={"Ex: Macbook pro"}
-        type={"text"}
-        value={stuff.title}
-        changeHandler={handleInputChange}
-      />
-      <FormInput
-        label={"Prix"}
-        id="price"
-        placeholder={"Ex: 30€"}
-        type={"number"}
-        value={stuff.price}
-        changeHandler={handleInputChange}
-      />
+        <FormInput
+          label={"Titre"}
+          id="title"
+          placeholder={"Ex: Macbook pro"}
+          type={"text"}
+          value={stuff.title}
+          changeHandler={handleInputChange}
+        />
+        <FormInput
+          label={"Prix"}
+          id="price"
+          placeholder={"Ex: 30€"}
+          type={"number"}
+          value={stuff.price}
+          changeHandler={handleInputChange}
+        />
       </div>
 
       <textarea

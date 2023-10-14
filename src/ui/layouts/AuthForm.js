@@ -6,6 +6,7 @@ import { Controller } from "../../controller/auth";
 import { Controller as AuthDialogController } from "../../controller/authDialog";
 
 export default function AuthForm() {
+  // eslint-disable-next-line
   const [cookies, setCookies] = useCookies(["user"]);
   /* STATES */
   const dispatch = useDispatch();

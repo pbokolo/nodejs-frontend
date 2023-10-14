@@ -8,6 +8,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 
 export default function StuffDetails({ stuff }) {
+  // eslint-disable-next-line
   const [cookies, setCookies] = useCookies(["user"]);
 
   const dispatch = useDispatch();
