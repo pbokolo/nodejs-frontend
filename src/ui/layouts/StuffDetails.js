@@ -15,7 +15,7 @@ export default function StuffDetails({ stuff }) {
   const controller = new Stuff(dispatch);
 
   const handleDelete = () => {
-    controller.delete(stuff._id);
+    controller.delete(stuff._id, cookies.user);
   };
 
   const handleUpdate = () => {
