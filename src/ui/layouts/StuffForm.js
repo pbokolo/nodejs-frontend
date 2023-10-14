@@ -22,10 +22,10 @@ export default function StuffForm({ selectedStuff }) {
     setEditable(false);
     if (!selectedStuff) {
       stuff.userId = cookies.user.userId;
-      controller.submitNew(stuff, setStuff);
+      controller.submitNew(stuff, cookies.user);
       return;
     }
-    controller.submitUpdate(stuff, setStuff);
+    controller.submitUpdate(stuff, cookies.user);
   };
   return (
     <form className="form" onSubmit={handleSubmit}>

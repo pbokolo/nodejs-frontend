@@ -28,9 +28,11 @@ class Stuff {
     }
   }
 
-  async submitNew(stuff) {
+  async submitNew(stuff, user) {
     try {
-      const response = await axios.post(`${api}/stuff`, stuff);
+      const response = await axios.post(`${api}/stuff`, stuff, {
+        headers: { Authorization: `Bearer ${user.token}` },
+      });
       console.log(response);
       this.#closeDialog();
     } catch (error) {
@@ -38,9 +40,11 @@ class Stuff {
     }
   }
 
-  async submitUpdate(stuff) {
+  async submitUpdate(stuff, user) {
     try {
-      const response = await axios.put(`${api}/stuff?id=${stuff._id}`, stuff);
+      const response = await axios.put(`${api}/stuff?id=${stuff._id}`, stuff, {
+        headers: { Authorization: `Bearer ${user.token}` },
+      });
       console.log(response);
       this.#closeDialog();
     } catch (error) {
@@ -48,9 +52,11 @@ class Stuff {
     }
   }
 
-  async delete(id) {
+  async delete(id, user) {
     try {
-      const response = await axios.delete(`${api}/stuff?id=${id}`);
+      const response = await axios.delete(`${api}/stuff?id=${id}`, {
+        headers: { Authorization: `Bearer ${user.token}` },
+      });
       console.log(response);
       this.#closeDialog();
     } catch (error) {
