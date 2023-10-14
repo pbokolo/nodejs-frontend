@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useCookies } from "react-cookie";
 
 import StuffCard from "../components/StuffCard";
 import StuffDialog from "./StuffDialog";
@@ -17,10 +18,12 @@ export default function Section() {
   let { list } = useSelector((state) => state.stuffs);
   let { show } = useSelector((state) => state.stuffDialog);
   const { authDialog } = useSelector((state) => state.auth);
+  // eslint-disable-next-line
+  const [cookies, setCookies] = useCookies(["user"]);
 
   // Each time the component is mounted
   useEffect(() => {
-    stuffController.getAll();
+    stuffController.getAll(cookies.user);
   });
 
   const handleClick = (e) => {

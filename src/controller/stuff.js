@@ -17,9 +17,11 @@ class Stuff {
     this.#dispatch = dispatch;
   }
 
-  async getAll() {
+  async getAll(user) {
     try {
-      const stuffs = await axios.get(api);
+      const stuffs = await axios.get(api, {
+        headers: { Authorization: `Bearer ${user.token}` },
+      });
       this.#dispatch(setList(stuffs.data));
     } catch (error) {
       console.log(error);
