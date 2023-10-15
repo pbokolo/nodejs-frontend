@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function UploadBox() {
+  const [image, setImage] = useState(null);
+
   let loadImage = (e) => {
     //getting first user selected file
     let file = e.target.files[0];
 
     //returning if file is not selected
     if (!file) return;
+    setImage(file);
 
     // if file selected
 
@@ -22,10 +25,11 @@ export default function UploadBox() {
       wrapper.classList.add("active");
     });*/
   };
+
   return (
     <div
       className="upload__box"
-      onClick={(e) => {
+      onClick={() => {
         document.getElementById("fileInput").click();
       }}
     >
@@ -36,7 +40,11 @@ export default function UploadBox() {
         className="fileInput"
         hidden
       />
-      <img src="" alt="" className="previewImg" />
+      <img
+        src={image ? URL.createObjectURL(image) : ""}
+        alt=""
+        className={`previewImg ${image ? "previewImg--loaded" : ""}`}
+      />
       <i className="fas fa-cloud-upload-alt"></i>
       <p>Select image from device</p>
     </div>
