@@ -46,7 +46,7 @@ export default function UploadBox() {
         alt=""
         className={`previewImg ${image ? "previewImg--loaded" : ""}`}
       />
-      <CloudUploadIcon fontSize="large" />
+      <CloudUploadIcon sx={{ fontSize: "100px", color: "#dedede" }} />
       <p>Select image from device</p>
     </div>
   );
