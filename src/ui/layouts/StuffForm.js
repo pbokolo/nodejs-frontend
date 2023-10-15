@@ -11,6 +11,7 @@ export default function StuffForm({ selectedStuff }) {
 
   const [stuff, setStuff] = useState(selectedStuff || controller.initialState);
   const [editable, setEditable] = useState(true);
+  const [imageUrl, setImageUrl] = useState(null);
   // eslint-disable-next-line
   const [cookies, setCookes] = useCookies(["user"]);
 
@@ -30,7 +31,7 @@ export default function StuffForm({ selectedStuff }) {
   };
   return (
     <form className="form" onSubmit={handleSubmit}>
-      <UploadBox />
+      <UploadBox url={imageUrl} urlSetter={setImageUrl} />
       {/* <img className="img img--stuff" alt={stuff.title} src={stuff.imageUrl} /> */}
       {/* <FormInput
         label={"Image"}
