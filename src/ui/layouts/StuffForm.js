@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useCookies } from "react-cookie";
 import FormInput from "../components/FormInput";
 import { Stuff } from "../../controller/stuff";
+import UploadBox from "./UploadBox";
 
 export default function StuffForm({ selectedStuff }) {
   const dispatch = useDispatch();
@@ -29,6 +30,7 @@ export default function StuffForm({ selectedStuff }) {
   };
   return (
     <form className="form" onSubmit={handleSubmit}>
+      <UploadBox />
       <img className="img img--stuff" alt={stuff.title} src={stuff.imageUrl} />
       <FormInput
         label={"Image"}
