@@ -11,20 +11,6 @@ export default function UploadBox() {
     //returning if file is not selected
     if (!file) return;
     setImage(file);
-
-    // if file selected
-
-    //passing selected file url as source to preview image
-    // previewImg.src = URL.createObjectURL(file);
-
-    //once image loaded
-    /*previewImg.addEventListener("load", () => {
-      //displaying image height & width in respective inputs
-      widthInput.value = previewImg.naturalWidth;
-      heightInput.value = previewImg.naturalHeight;
-      orgRatio = previewImg.naturalWidth / previewImg.naturalHeight;
-      wrapper.classList.add("active");
-    });*/
   };
 
   return (
