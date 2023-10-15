@@ -1,16 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 
-export default function UploadBox({ url, urlSetter }) {
-  const [image, setImage] = useState(null);
-
+export default function UploadBox({ url, imageSetter }) {
   let loadImage = (e) => {
     //getting first user selected file
     let file = e.target.files[0];
 
     //returning if file is not selected
     if (!file) return;
-    urlSetter(URL.createObjectURL(file));
+    imageSetter(file);
   };
 
   return (
@@ -32,8 +30,15 @@ export default function UploadBox({ url, urlSetter }) {
         alt=""
         className={`previewImg ${url ? "previewImg--loaded" : ""}`}
       />
-      <CloudUploadIcon sx={{ fontSize: "100px", color: "#dedede" }} />
-      <p>Sélectionnez une image</p>
+
+      {!url ? (
+        <>
+          <CloudUploadIcon sx={{ fontSize: "100px", color: "#dedede" }} />
+          <p>Sélectionnez une image</p>
+        </>
+      ) : (
+        ""
+      )}
     </div>
   );
 }
