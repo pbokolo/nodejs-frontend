@@ -33,15 +33,6 @@ export default function StuffForm({ selectedStuff }) {
   return (
     <form className="form" onSubmit={handleSubmit}>
       <UploadBox url={imageUrl} imageSetter={setStuffImage} />
-      {/* <img className="img img--stuff" alt={stuff.title} src={stuff.imageUrl} /> */}
-      {/* <FormInput
-        label={"Image"}
-        id="imageUrl"
-        placeholder={"Ex: https://serveur/image.jpg"}
-        type={"text"}
-        value={stuff.imageUrl}
-        changeHandler={handleInputChange}
-      /> */}
       <div className="test">
         <FormInput
           label={"Titre"}
