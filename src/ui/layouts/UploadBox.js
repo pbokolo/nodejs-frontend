@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 
 export default function UploadBox() {
   const [image, setImage] = useState(null);
@@ -45,7 +46,7 @@ export default function UploadBox() {
         alt=""
         className={`previewImg ${image ? "previewImg--loaded" : ""}`}
       />
-      <i className="fas fa-cloud-upload-alt"></i>
+      <CloudUploadIcon fontSize="large" />
       <p>Select image from device</p>
     </div>
   );
