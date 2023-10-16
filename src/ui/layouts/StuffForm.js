@@ -25,13 +25,17 @@ export default function StuffForm({ selectedStuff }) {
     setEditable(false);
     if (!selectedStuff) {
       stuff.userId = cookies.user.userId;
-      controller.submitNew(stuff, cookies.user);
+      controller.submitNew(stuff, stuffImage, cookies.user);
       return;
     }
     controller.submitUpdate(stuff, cookies.user);
   };
   return (
-    <form className="form" onSubmit={handleSubmit}>
+    <form
+      encType="multipart/form-data"
+      className="form"
+      onSubmit={handleSubmit}
+    >
       <UploadBox url={imageUrl} imageSetter={setStuffImage} />
       <div className="test">
         <FormInput

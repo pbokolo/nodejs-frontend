@@ -18,21 +18,25 @@ class Stuff {
   }
 
   async getAll(user) {
-    /*try {
+    try {
       const stuffs = await axios.get(api, {
         headers: { Authorization: `Bearer ${user.token}` },
       });
       this.#dispatch(setList(stuffs.data));
     } catch (error) {
       console.log(error);
-    }*/
+    }
   }
 
-  async submitNew(stuff, user) {
+  async submitNew(stuff, stuffImage, user) {
     try {
-      const response = await axios.post(`${api}/stuff`, stuff, {
-        headers: { Authorization: `Bearer ${user.token}` },
-      });
+      const response = await axios.post(
+        `${api}/stuff`,
+        { ...stuff, image: stuffImage },
+        {
+          headers: { Authorization: `Bearer ${user.token}` },
+        }
+      );
       console.log(response);
       this.#closeDialog();
     } catch (error) {
