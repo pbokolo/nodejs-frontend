@@ -19,5 +19,5 @@ export const notifSlice = createSlice({
   },
 });
 
-export const { open, close } = notifSlice.actions;
+export const { open, close, setText, clearText } = notifSlice.actions;
 export default notifSlice.reducer;
