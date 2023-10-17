@@ -1,4 +1,5 @@
 import axios from "axios";
+import { open } from "./notifSlice";
 const api = "http://localhost:4000/api/auth";
 
 class Controller {
@@ -9,19 +10,19 @@ class Controller {
     this.#authDialog = authDialog;
   }
 
-  handleSubmit(e, type, creds, setEditable, setCookies) {
+  handleSubmit(e, type, creds, setEditable, setCookies, dispatch) {
     e.preventDefault();
     setEditable(false);
 
     switch (type) {
       case "signin":
-        this.#signin(creds, setCookies);
+        this.#signin(creds, setCookies, dispatch);
         break;
       case "signup":
         this.#signup(creds);
         break;
       default:
-        this.#signin(creds);
+        this.#signin(creds, setCookies, dispatch);
         break;
     }
   }
@@ -34,12 +35,13 @@ class Controller {
       console.log(error);
     }
   }
-  async #signin(creds, setCookies) {
+  async #signin(creds, setCookies, dispatch) {
     try {
       const response = await axios.post(`${api}/signin`, creds);
       const { userId, token } = response.data;
       setCookies("user", { userId, token }, { path: "/" });
       this.#authDialog.close();
+      dispatch(open());
     } catch (error) {
       console.log(error);
     }

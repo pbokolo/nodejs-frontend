@@ -43,7 +43,14 @@ export default function AuthForm() {
       <form
         className="form"
         onSubmit={(e) =>
-          controller.handleSubmit(e, type, creds, setEditable, setCookies)
+          controller.handleSubmit(
+            e,
+            type,
+            creds,
+            setEditable,
+            setCookies,
+            dispatch
+          )
         }
       >
         <FormInput
