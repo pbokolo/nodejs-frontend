@@ -10,6 +10,12 @@ export const notifSlice = createSlice({
     close: (state) => {
       state.display = false;
     },
+    setText: (state, action) => {
+      state.text = action.payload;
+    },
+    clearText: (state) => {
+      state.text = "";
+    },
   },
 });
 
