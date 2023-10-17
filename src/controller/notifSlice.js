@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const notifSlice = createSlice({
   name: "notif",
-  initialState: { display: false, text: "" },
+  initialState: { display: true, text: "Notif" },
   reducers: {
     open: (state) => {
       state.display = true;
