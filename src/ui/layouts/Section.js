@@ -10,6 +10,7 @@ import AuthDialog from "./AuthDialog";
 import { Stuff } from "../../controller/stuff";
 import { Controller } from "../../controller/stuffDialog";
 import { setSelectedStuff } from "../../controller/stuffSlice";
+import NotificationBox from "./NotificationBox";
 
 export default function Section() {
   const dispatch = useDispatch();
@@ -42,6 +43,7 @@ export default function Section() {
           <Spinner />
         )}
       </section>
+      <NotificationBox />
 
       {show ? <StuffDialog /> : ""}
       {authDialog ? <AuthDialog /> : ""}
