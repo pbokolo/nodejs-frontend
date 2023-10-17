@@ -1,5 +1,5 @@
 import axios from "axios";
-import { open } from "./notifSlice";
+import { open, close } from "./notifSlice";
 const api = "http://localhost:4000/api/auth";
 
 class Controller {
@@ -41,10 +41,15 @@ class Controller {
       const { userId, token } = response.data;
       setCookies("user", { userId, token }, { path: "/" });
       this.#authDialog.close();
-      dispatch(open());
+      this.#showNotification(dispatch);
     } catch (error) {
       console.log(error);
     }
+  }
+
+  #showNotification(dispatch) {
+    dispatch(open());
+    setTimeout(() => dispatch(close()), 3000);
   }
 }
 
