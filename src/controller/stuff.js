@@ -32,7 +32,7 @@ class Stuff {
     try {
       const response = await axios.post(
         `${api}/stuff`,
-        { ...stuff, image: stuffImage },
+        { ...stuff, file: stuffImage },
         {
           headers: { Authorization: `Bearer ${user.token}` },
         }

@@ -22,6 +22,7 @@ export default function UploadBox({ url, imageSetter }) {
         id="fileInput"
         onChange={loadImage}
         type="file"
+        name="file"
         className="fileInput"
         hidden
       />
