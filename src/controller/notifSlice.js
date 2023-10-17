@@ -2,13 +2,13 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const notifSlice = createSlice({
   name: "notif",
-  initialState: { show: false, text: "" },
+  initialState: { display: false, text: "" },
   reducers: {
     open: (state) => {
-      state.show = true;
+      state.display = true;
     },
     close: (state) => {
-      state.show = false;
+      state.display = false;
     },
   },
 });

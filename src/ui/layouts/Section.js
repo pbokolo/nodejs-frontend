@@ -19,6 +19,7 @@ export default function Section() {
   let { list } = useSelector((state) => state.stuffs);
   let { show } = useSelector((state) => state.stuffDialog);
   const { authDialog } = useSelector((state) => state.auth);
+  const { display } = useSelector((state) => state.notif);
   // eslint-disable-next-line
   const [cookies, setCookies] = useCookies(["user"]);
 
@@ -43,7 +44,7 @@ export default function Section() {
           <Spinner />
         )}
       </section>
-      <NotificationBox />
+      {display ? <NotificationBox /> : ""}
 
       {show ? <StuffDialog /> : ""}
       {authDialog ? <AuthDialog /> : ""}
