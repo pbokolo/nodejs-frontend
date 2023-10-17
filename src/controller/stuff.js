@@ -72,6 +72,8 @@ class Stuff {
     this.#dispatch(close());
     this.#dispatch(setSelectedStuff(null));
   }
+
+  #dispatchNotification() {}
 }
 
 const stuffController = new Stuff();
