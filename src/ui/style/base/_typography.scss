@@ -55,4 +55,10 @@
     text-decoration: underline;
     font-size: $fs-sm;
   }
+
+  &--notification {
+    font-size: $fs-sm;
+    font-family: $heading-font;
+    font-weight: $fw-bold;
+  }
 }
